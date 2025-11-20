@@ -53,3 +53,42 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+
+# Build folders
+[Dd]ebug/
+[Rr]elease/
+[Bb]uild/
+
+# Atmel Studio generated files
+*.atsln
+*.atsuo
+*.ctf
+*.elf
+*.hex
+*.eep
+*.lss
+*.map
+*.sym
+*.d
+
+# Temporary files
+*.obj
+*.o
+*.srec
+*.dep
+*.td
+*.tmp
+
+# Backup files
+*~
+*.bak
+
+# Visual Studio/Atmel Studio user settings
+*.user
+*.suo
+*.ipch
+*.aps
+
+# Logs
+*.log
