@@ -67,6 +67,7 @@ void lcd_print(char *str)
 
 void lcd_clear(){
 	lcd_cmd(0x01);
+	_delay_ms(2);
 }
 
 #endif
