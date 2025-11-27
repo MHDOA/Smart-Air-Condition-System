@@ -59,6 +59,7 @@ dkms.conf
 [Dd]ebug/
 [Rr]elease/
 [Bb]uild/
+[Pp]roject [Bb]ackups
 
 # Atmel Studio generated files
 *.atsln
@@ -79,6 +80,7 @@ dkms.conf
 *.dep
 *.td
 *.tmp
+*.workspace
 
 # Backup files
 *~
