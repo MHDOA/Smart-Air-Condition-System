@@ -17,6 +17,7 @@ void lcd_cmd(unsigned char cmd);
 void lcd_data(unsigned char data);
 void lcd_init();
 void lcd_print(char *str);
+void lcd_clear();
 
 static void lcd_send_halfbyte(unsigned char halfbit)
 {
@@ -62,6 +63,10 @@ void lcd_print(char *str)
 	{
 		lcd_data(*str++);
 	}
+}
+
+void lcd_clear(){
+	lcd_cmd(0x01);
 }
 
 #endif
