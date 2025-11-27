@@ -10,7 +10,9 @@ int main(void)
 	unsigned char message[] = "Hello";
 	while (1)
 	{
+		lcd_clear();
 		lcd_print(message);
 		_delay_ms(500);
+		
 	}
 }
