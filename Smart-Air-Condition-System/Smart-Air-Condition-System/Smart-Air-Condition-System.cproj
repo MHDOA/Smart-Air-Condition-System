@@ -5,7 +5,7 @@
     <ProjectVersion>7.0</ProjectVersion>
     <ToolchainName>com.microchip.xc8</ToolchainName>
     <ProjectGuid>2285C48D-296E-43FD-A7B6-69885F64CFFD</ProjectGuid>
-    <avrdevice>ATmega328P</avrdevice>
+    <avrdevice>ATmega8A</avrdevice>
     <avrdeviceseries>none</avrdeviceseries>
     <OutputType>Executable</OutputType>
     <Language>C</Language>
@@ -20,10 +20,10 @@
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
     <ProgFlashFromRam>true</ProgFlashFromRam>
-    <RamSnippetAddress />
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
     <UncachedRange />
     <preserveEEPROM>true</preserveEEPROM>
-    <OverrideVtorValue />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
     <BootSegment>2</BootSegment>
     <ResetRule>0</ResetRule>
     <eraseonlaunchrule>0</eraseonlaunchrule>
@@ -40,6 +40,7 @@
         </dependencies>
       </framework-data>
     </AsfFrameworkConfig>
+    <avrtool />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -57,11 +58,11 @@
         <com.microchip.xc8.compiler.optimization.PackStructureMembers>True</com.microchip.xc8.compiler.optimization.PackStructureMembers>
         <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
         <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
-        <com.microchip.xc8.linker.libraries.Libraries>
+        <com.microchip.xc8.linker.libraries.LibrarySearchPaths>
           <ListValues>
-            <Value>libm</Value>
+            <Value>C:\FILES\Developing\IUST\Term05\MP\Project\Smart-Air-Condition-System\Smart-Air-Condition-System\Smart-Air-Condition-System\SIM800L</Value>
           </ListValues>
-        </com.microchip.xc8.linker.libraries.Libraries>
+        </com.microchip.xc8.linker.libraries.LibrarySearchPaths>
       </com.microchip.xc8>
     </ToolchainSettings>
   </PropertyGroup>
@@ -81,25 +82,63 @@
         <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
         <com.microchip.xc8.compiler.optimization.DebugLevel>Default (-g2)</com.microchip.xc8.compiler.optimization.DebugLevel>
         <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
-        <com.microchip.xc8.linker.libraries.Libraries>
+        <com.microchip.xc8.linker.libraries.LibrarySearchPaths>
           <ListValues>
-            <Value>libm</Value>
+            <Value>C:\FILES\Developing\IUST\Term05\MP\Project\Smart-Air-Condition-System\Smart-Air-Condition-System\Smart-Air-Condition-System\SIM800L</Value>
           </ListValues>
-        </com.microchip.xc8.linker.libraries.Libraries>
+        </com.microchip.xc8.linker.libraries.LibrarySearchPaths>
         <com.microchip.xc8.assembler.debugging.DebugLevel>Default (-Wa,-g)</com.microchip.xc8.assembler.debugging.DebugLevel>
       </com.microchip.xc8>
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="INTER\interrupts.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="INTER\interrupts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LCD\lcd.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="LCD\lcd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LM35DZ\lm35dz.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LM35DZ\lm35dz.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="PWM\pwm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PWM\pwm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SIM800L\sim800l.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SIM800L\sim800l.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="UART\uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="UART\uart.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LCD" />
+    <Folder Include="LM35DZ" />
+    <Folder Include="INTER" />
+    <Folder Include="PWM" />
+    <Folder Include="SIM800L" />
+    <Folder Include="UART" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
