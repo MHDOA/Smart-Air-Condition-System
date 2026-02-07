@@ -1,6 +1,7 @@
 ﻿#ifndef SIM800L_H_
 #define SIM800L_H_
 #include <avr/io.h>
+#include <util/delay.h>
 
 void sim800_init(void);
 void sim800_call(const char *phone);

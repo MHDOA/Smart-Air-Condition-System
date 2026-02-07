@@ -1,6 +1,4 @@
-﻿#define F_CPU 4000000UL
-#include <util/delay.h>
-#include "sim800l.h"
+﻿#include "sim800l.h"
 
 
 void sim800_init(void) {
