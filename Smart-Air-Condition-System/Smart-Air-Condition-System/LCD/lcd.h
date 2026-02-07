@@ -1,7 +1,7 @@
 ﻿#ifndef LCD_H_
 #define LCD_H_
 
-#define F_CPU 8000000UL
+#define F_CPU 4000000UL
 #include <avr/io.h>
 #include <util/delay.h>
 
@@ -16,7 +16,7 @@
 void lcd_cmd(unsigned char cmd);
 void lcd_data(unsigned char data);
 void lcd_init();
-void lcd_print(char *str);
+void lcd_print(const char *str);
 void lcd_clear();
 
 static void lcd_send_halfbyte(unsigned char halfbit)
@@ -57,11 +57,11 @@ void lcd_init()
 	_delay_ms(2);
 }
 
-void lcd_print(char *str)
+void lcd_print(const char *str)
 {
 	while(*str)
 	{
-		lcd_data(*str++);
+		lcd_data((unsigned char)*str++);
 	}
 }
 
