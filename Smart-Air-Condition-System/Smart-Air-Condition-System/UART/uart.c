@@ -1,5 +1,4 @@
-﻿#include <avr/io.h>
-#include "uart.h"
+﻿#include "uart.h"
 
 #define UBRR_VAL ((F_CPU/16/BAUD)-1)
 

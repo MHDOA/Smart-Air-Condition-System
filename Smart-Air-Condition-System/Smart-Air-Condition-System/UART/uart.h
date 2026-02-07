@@ -2,9 +2,8 @@
 #define UART_H_
 
 #include <avr/io.h>
-
-#define F_CPU 4000000UL
 #define BAUD 9600
+#define F_CPU 4000000UL
 
 void uart_init(void);
 void uart_send_char(char c);
