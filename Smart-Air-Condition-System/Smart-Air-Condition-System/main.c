@@ -12,7 +12,7 @@
 #include "INTER/interrupts.h"
 
 #define ALARM_MSG "***ALARM-FIRE***"
-#define PHONE_N "09135363582"
+#define PHONE_N "09123456789"
 
 static void int_to_char(uint8_t val, char *buf) {
 	buf[0] = '0' + (val / 10);
